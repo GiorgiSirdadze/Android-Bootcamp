@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TbcHomework</string>
+    <string name="my_program">My Program</string>
+    <string name="press_button">Press Button</string>
+    <string name="enter_number">Enter Number</string>
+    <string name="english_georgian">English / Georgian</string>
+    <string name="convertation">Convertation</string>
+    <string name="convert">Convert</string>
+</resources>
