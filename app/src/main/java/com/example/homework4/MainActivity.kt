@@ -133,7 +133,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        clearButton.setOnClickListener {
+        clearButton.setOnLongClickListener {
             editEmail.text.clear()
             editUsername.text.clear()
             editFirstName.text.clear()
@@ -147,6 +147,8 @@ class MainActivity : AppCompatActivity() {
             lNameError.text = ""
             ageError.text = ""
             pNumberError.text = ""
+
+            true
         }
     }
 }
