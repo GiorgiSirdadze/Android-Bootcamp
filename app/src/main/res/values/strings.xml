@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Homework5</string>
+    <string name="enter_email">Enter Email:</string>
+    <string name="enter_full_name">Enter Full Name:</string>
+    <string name="get_user_info">Get User Info</string>
+    <string name="email">Email:</string>
+    <string name="users_0">Users: 0</string>
+    <string name="add_user">Add User</string>
+</resources>
