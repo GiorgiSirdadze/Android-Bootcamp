@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Homework7</string>
+    <string name="register">REGISTER</string>
+    <string name="log_in">LOG IN</string>
+    <string name="next">next</string>
+    <string name="enter_email">Enter Email:</string>
+    <string name="enter_password">Enter Password:</string>
+    <string name="registration">Registration</string>
+    <string name="enter_username">Enter Username:</string>
+    <string name="sign_up">sign up</string>
+    <string name="log_in_txt">Log in</string>
+</resources>

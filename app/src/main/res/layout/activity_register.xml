@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/registerBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/back_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+    <TextView
+        android:id="@+id/registrationView"
+        android:layout_width="201dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="80dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/registration"
+        android:textColor="#121212"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:layout_width="404dp"
+        android:layout_height="308dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrationView"
+        app:layout_constraintVertical_bias="0.02">
+
+        <LinearLayout
+            android:id = "@+id/firstPart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registration"
+            app:layout_constraintVertical_bias="0.069"
+            tools:layout_editor_absoluteX="0dp">
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="373dp"
+                android:layout_height="61dp"
+                android:background="@drawable/edit_text_border"
+                android:hint="@string/enter_email"
+                android:inputType="textEmailAddress"
+                android:textColor="#121212"
+                android:paddingStart="8dp"
+                tools:ignore="Autofill,DuplicateClickableBoundsCheck,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/emailError"
+                android:layout_width="373dp"
+                android:layout_height="16dp"
+                android:textColor="#F00707"
+                android:autoSizeTextType="uniform" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="373dp"
+                android:layout_height="61dp"
+                android:background="@drawable/edit_text_border"
+                android:hint="@string/enter_password"
+                android:inputType="textPassword"
+                android:textColor="#121212"
+                android:paddingStart="8dp"
+                tools:ignore="Autofill,DuplicateClickableBoundsCheck,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/passwordError"
+                android:layout_width="373dp"
+                android:layout_height="16dp"
+                android:textColor="#F00707"
+                android:autoSizeTextType="uniform" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nextButton"
+                android:layout_width="373dp"
+                android:layout_height="61dp"
+                android:background="@drawable/button_solid"
+                android:text="@string/next"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                tools:ignore="ButtonStyle" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/secondPart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:layout_editor_absoluteX="7dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="373dp"
+                android:layout_height="61dp"
+                android:background="@drawable/edit_text_border"
+                android:hint="@string/enter_username"
+                android:inputType="text"
+                android:textColor="#121212"
+                android:paddingStart="8dp"
+                tools:ignore="Autofill,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/usernameError"
+                android:layout_width="373dp"
+                android:layout_height="16dp"
+                android:textColor="#F00707"
+                android:autoSizeTextType="uniform" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/signupButton"
+                android:layout_width="373dp"
+                android:layout_height="61dp"
+                android:background="@drawable/button_solid"
+                android:text="@string/sign_up"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                tools:ignore="ButtonStyle"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/policy"
+                android:layout_width="373dp"
+                android:layout_height="25dp"
+                android:autoSizeTextType="uniform" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

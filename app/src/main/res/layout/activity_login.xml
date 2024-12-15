@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+
+        android:id="@+id/loginBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/back_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/loginView"
+        android:layout_width="201dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="76dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/log_in_txt"
+        android:textColor="#121212"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/thirdPart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginView"
+        app:layout_constraintVertical_bias="0.032"
+        tools:layout_editor_absoluteX="-16dp">
+
+        <EditText
+            android:id="@+id/login_email"
+            android:layout_width="373dp"
+            android:layout_height="61dp"
+            android:background="@drawable/edit_text_border"
+            android:hint="@string/enter_email"
+            android:textColor="#121212"
+            android:paddingStart="8dp"
+            android:inputType="textEmailAddress"
+            tools:ignore="Autofill,DuplicateClickableBoundsCheck,RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/log_emailError"
+            android:layout_width="373dp"
+            android:layout_height="16dp"
+            android:textColor="#F00707"
+            android:autoSizeTextType="uniform" />
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="373dp"
+            android:layout_height="61dp"
+            android:background="@drawable/edit_text_border"
+            android:hint="@string/enter_password"
+            android:inputType="textPassword"
+            android:textColor="#121212"
+            android:paddingStart="8dp"
+            tools:ignore="Autofill,DuplicateClickableBoundsCheck,RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/log_passwordError"
+            android:layout_width="373dp"
+            android:layout_height="16dp"
+            android:textColor="#F00707"
+            android:autoSizeTextType="uniform" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginButton"
+            android:layout_width="373dp"
+            android:layout_height="61dp"
+            android:background="@drawable/button_solid"
+            android:text="@string/log_in"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
