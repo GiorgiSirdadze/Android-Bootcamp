@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Homework11</string>
+    <string name="delivery_adress">Delivery Adress</string>
+    <string name="add_new_address">Add new address</string>
+    <string name="edit">Edit</string>
+    <string name="send_to">SEND TO</string>
+    <string name="my_office">My Office</string>
+    <string name="enter_new_address">Enter New Address</string>
+    <string name="save">Save</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="enter_location">Enter Location</string>
+    <string name="enter_id">Enter ID</string>
+</resources>
