@@ -1,0 +1,36 @@
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/incomming_container"
+        android:padding="12dp"
+        android:layout_gravity="start"
+        android:layout_marginEnd="60dp"
+        android:elevation="2dp">
+
+        <TextView
+            android:id="@+id/tvIncomingMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello! Can I help you?"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvIncomingTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today, 7:02pm"
+        android:textSize="12sp"
+        android:textColor="#AAAAAA"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="start" />
+</androidx.appcompat.widget.LinearLayoutCompat>
