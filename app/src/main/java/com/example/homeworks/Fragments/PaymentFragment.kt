@@ -1,10 +1,13 @@
-package com.example.homeworks
+package com.example.homeworks.fragments
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.example.homeworks.carditem.CardAdapter
+import com.example.homeworks.viewmodel.PaymentViewModel
+import com.example.homeworks.R
 import com.example.homeworks.databinding.FragmentPaymentBinding
 
 class PaymentFragment : BaseFragment<FragmentPaymentBinding>(FragmentPaymentBinding::inflate) {

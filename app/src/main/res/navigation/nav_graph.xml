@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/paymentFragment"
-        android:name="com.example.homeworks.PaymentFragment"
+        android:name="com.example.homeworks.Fragments.PaymentFragment"
         android:label="fragment_payment"
         tools:layout="@layout/fragment_payment" >
         <action
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/addCardFragment"
-        android:name="com.example.homeworks.AddCardFragment"
+        android:name="com.example.homeworks.Fragments.AddCardFragment"
         android:label="fragment_add_card"
         tools:layout="@layout/fragment_add_card" >
         <action
@@ -32,6 +32,6 @@
     </fragment>
     <dialog
         android:id="@+id/bottomSheetFragment2"
-        android:name="com.example.homeworks.BottomSheetFragment"
+        android:name="com.example.homeworks.Fragments.BottomSheetFragment"
         android:label="BottomSheetFragment" />
 </navigation>

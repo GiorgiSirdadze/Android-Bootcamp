@@ -1,4 +1,4 @@
-package com.example.homeworks
+package com.example.homeworks.carditem
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.homeworks.databinding.MasterItemBinding
 import com.example.homeworks.databinding.VisaItemBinding
 
-class CardAdapter(private val onCardLongClick: (Card) -> Unit) : ListAdapter<Card, RecyclerView.ViewHolder>(CardDiffUtil()) {
+class CardAdapter(private val onCardLongClick: (Card) -> Unit) : ListAdapter<Card, RecyclerView.ViewHolder>(
+    CardDiffUtil()
+) {
 
     companion object {
         const val TYPE_MASTER = 0

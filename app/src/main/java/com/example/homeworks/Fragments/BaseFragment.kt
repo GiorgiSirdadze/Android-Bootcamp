@@ -1,4 +1,4 @@
-package com.example.homeworks
+package com.example.homeworks.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

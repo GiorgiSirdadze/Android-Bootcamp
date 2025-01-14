@@ -1,10 +1,14 @@
-package com.example.homeworks
+package com.example.homeworks.fragments
 
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
+import com.example.homeworks.carditem.Card
+import com.example.homeworks.carditem.CardType
+import com.example.homeworks.viewmodel.PaymentViewModel
+import com.example.homeworks.R
 import com.example.homeworks.databinding.FragmentAddCardBinding
 
 class AddCardFragment : BaseFragment<FragmentAddCardBinding>(FragmentAddCardBinding::inflate) {
