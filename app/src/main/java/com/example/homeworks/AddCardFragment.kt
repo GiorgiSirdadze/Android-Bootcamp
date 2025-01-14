@@ -1,20 +1,15 @@
-package com.example.homeworks.fragments
+package com.example.homeworks
 
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
-import com.example.homeworks.carditem.Card
-import com.example.homeworks.carditem.CardType
-import com.example.homeworks.viewmodel.PaymentViewModel
-import com.example.homeworks.R
 import com.example.homeworks.databinding.FragmentAddCardBinding
 
 class AddCardFragment : BaseFragment<FragmentAddCardBinding>(FragmentAddCardBinding::inflate) {
 
     private val paymentViewModel: PaymentViewModel by activityViewModels()
-    private var cardId : Int = 0
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -40,6 +35,8 @@ class AddCardFragment : BaseFragment<FragmentAddCardBinding>(FragmentAddCardBind
                     CardType.VISA
                 }
 
+                val cardId = paymentViewModel.getNextCardId()
+
                 val newCard = Card(
                     cardId = cardId,
                     cardNumber = cardNumber,
@@ -53,7 +50,7 @@ class AddCardFragment : BaseFragment<FragmentAddCardBinding>(FragmentAddCardBind
             } else {
                 Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
             }
-            cardId++
+
         }
     }
 

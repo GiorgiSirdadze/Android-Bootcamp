@@ -1,14 +1,15 @@
-package com.example.homeworks.viewmodel
+package com.example.homeworks
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.homeworks.carditem.Card
 
 class PaymentViewModel : ViewModel() {
 
     private val _cards = MutableLiveData<List<Card>>()
     val cards: LiveData<List<Card>> = _cards
+
+    private var cardId: Int = 0
 
     fun addCard(card: Card) {
         val currentList = _cards.value?.toMutableList() ?: mutableListOf()
@@ -24,5 +25,8 @@ class PaymentViewModel : ViewModel() {
             currentList.remove(it)
             _cards.value = currentList
         }
+    }
+    fun getNextCardId(): Int {
+        return cardId++
     }
 }

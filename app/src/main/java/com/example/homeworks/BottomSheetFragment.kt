@@ -1,11 +1,10 @@
-package com.example.homeworks.fragments
+package com.example.homeworks
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.example.homeworks.viewmodel.PaymentViewModel
 import com.example.homeworks.databinding.FragmentBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 

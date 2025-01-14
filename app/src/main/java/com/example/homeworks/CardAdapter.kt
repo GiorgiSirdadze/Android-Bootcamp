@@ -1,4 +1,4 @@
-package com.example.homeworks.carditem
+package com.example.homeworks
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,4 +1,4 @@
-package com.example.homeworks.carditem
+package com.example.homeworks
 
 enum class CardType {
     MASTER,
