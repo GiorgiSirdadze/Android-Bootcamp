@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- res/drawable/spinner_edittext_style.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- White background -->
+    <solid android:color="@android:color/white" />
+
+    <!-- Rounded corners -->
+    <corners android:radius="4dp" />
+
+    <!-- Border color, similar to EditText -->
+    <stroke android:color="@android:color/darker_gray" android:width="1dp" />
+
+    <!-- Optional: Add padding to the spinner item -->
+    <padding android:left="10dp" android:right="10dp" android:top="8dp" android:bottom="8dp" />
+</shape>
+
