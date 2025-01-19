@@ -3,35 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/paymentFragment">
-
+    app:startDestination="@id/welcomeFragment">
     <fragment
-        android:id="@+id/paymentFragment"
-        android:name="com.example.homeworks.PaymentFragment"
-        android:label="fragment_payment"
-        tools:layout="@layout/fragment_payment" >
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.homeworks.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
         <action
-            android:id="@+id/action_paymentFragment_to_addCardFragment"
-            app:destination="@id/addCardFragment" />
+            android:id="@+id/action_welcomeFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_paymentFragment_to_bottomSheetFragment2"
-            app:destination="@id/bottomSheetFragment2">
-            <argument
-                android:name="cardId"
-                app:argType="integer" />
-        </action>
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/addCardFragment"
-        android:name="com.example.homeworks.AddCardFragment"
-        android:label="fragment_add_card"
-        tools:layout="@layout/fragment_add_card" >
+        android:id="@+id/loginFragment"
+        android:name="com.example.homeworks.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.homeworks.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
         <action
-            android:id="@+id/action_addCardFragment_to_paymentFragment"
-            app:destination="@id/paymentFragment" />
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
-    <dialog
-        android:id="@+id/bottomSheetFragment2"
-        android:name="com.example.homeworks.BottomSheetFragment"
-        android:label="BottomSheetFragment" />
 </navigation>
