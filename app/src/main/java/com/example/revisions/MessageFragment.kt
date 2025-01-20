@@ -14,16 +14,16 @@ class MessageFragment : BaseFragment<FragmentMessageBinding>(FragmentMessageBind
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Initialize RecyclerView Adapter
+
         chatAdapter = ChatAdapter()
 
-        // Set up RecyclerView
+
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = chatAdapter
         }
 
-        // Fetch data from ViewModel and submit to adapter
+
         val chatItems = chatViewModel.getChatItems()
         chatAdapter.submitList(chatItems)
 
