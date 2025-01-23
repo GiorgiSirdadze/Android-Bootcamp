@@ -9,16 +9,17 @@ import okhttp3.MediaType.Companion.toMediaType
 
 object RetrofitClient {
     private const val BASE_URL = "https://reqres.in/api/"
+    private val contentType = "application/json".toMediaType()
 
     private val json = Json {
-        ignoreUnknownKeys = true // To handle extra fields from the server
+        ignoreUnknownKeys = true
     }
 
     @OptIn(ExperimentalSerializationApi::class)
     private val retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
+            .addConverterFactory(json.asConverterFactory(contentType))
             .build()
     }
 

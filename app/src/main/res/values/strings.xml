@@ -31,4 +31,15 @@
     <string name="welcome">Welcome</string>
     <string name="register">Register</string>
     <string name="email">Email</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="login_successful">Login Successful!</string>
+    <string name="login_failed">Login failed</string>
+    <string name="user_session">user_session</string>
+    <string name="all_fields_are_required">All fields are required</string>
+    <string name="passwords_do_not_match">Passwords do not match</string>
+    <string name="registration_failed">Registration failed</string>
+    <string name="registration_successful">Registration Successful!</string>
+    <string name="home">Home</string>
+    <string name="log_out">Log Out</string>
+    <string name="remember_me">Remember Me</string>
 </resources>
