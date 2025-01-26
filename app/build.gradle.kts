@@ -53,11 +53,13 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
-    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+    implementation (libs.kotlinx.serialization.json.v151)
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
     implementation (libs.logging.interceptor)
     implementation(libs.retrofit.v2110)
     implementation (libs.retrofit2.kotlinx.serialization.converter)
+    implementation (libs.androidx.datastore.preferences)
+    implementation (libs.glide)
 
 }

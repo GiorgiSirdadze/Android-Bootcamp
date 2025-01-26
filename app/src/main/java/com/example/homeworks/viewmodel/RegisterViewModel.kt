@@ -1,7 +1,9 @@
-package com.example.homeworks
+package com.example.homeworks.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.homeworks.api.RegisterRequestDto
+import com.example.homeworks.api.RetrofitClient
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

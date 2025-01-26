@@ -1,4 +1,4 @@
-package com.example.homeworks
+package com.example.homeworks.api
 
 import kotlinx.serialization.Serializable
 

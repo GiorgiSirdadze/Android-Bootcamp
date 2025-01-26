@@ -1,9 +1,9 @@
-package com.example.homeworks
+package com.example.homeworks.api
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class RegisterResponseDto(
+data class LoginResponseDto(
     val token: String
 )
 

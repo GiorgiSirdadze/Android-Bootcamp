@@ -1,4 +1,4 @@
-package com.example.homeworks
+package com.example.homeworks.fragments
 
 import android.os.Bundle
 import android.widget.Toast
@@ -6,7 +6,9 @@ import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.homeworks.R
 import com.example.homeworks.databinding.FragmentRegisterBinding
+import com.example.homeworks.viewmodel.RegisterViewModel
 import kotlinx.coroutines.launch
 
 class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterBinding::inflate) {
@@ -16,10 +18,8 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
     override fun start() {
         backButton()
 
-        // Set up the register button click listener
         setupRegisterButton()
 
-        // Observe registration result
         observeRegistrationResult()
 
     }

@@ -1,48 +1,46 @@
-package com.example.homeworks
+package com.example.homeworks.fragments
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.homeworks.DataStoreManager
+import com.example.homeworks.viewmodel.LoginViewModel
+import com.example.homeworks.R
 import com.example.homeworks.databinding.FragmentLoginBinding
 import kotlinx.coroutines.launch
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
     private val loginViewModel: LoginViewModel by viewModels()
+    private lateinit var dataStoreManager: DataStoreManager
 
     override fun start() {
-        val sharedPreferences = requireActivity().getSharedPreferences("user_session", Context.MODE_PRIVATE)
+        dataStoreManager = DataStoreManager(requireContext())
 
-
-        // Check if a session exists and navigate to HomeFragment if logged in.
-
-        checkSessionAndNavigate(sharedPreferences)
-
-
-        // Pre-fill email and password fields from registration result.
+        observeLoginState()
 
         handleRegistrationResult()
 
-        // Set up button listeners for login and register actions.
-
-        setupButtonListeners(sharedPreferences)
+        setupButtonListeners()
     }
 
     /**
-     * Check if the user is logged in and navigate to HomeFragment if true.
+     * Observe the saved login state from DataStore and navigate to HomeFragment if logged in.
      */
-    private fun checkSessionAndNavigate(sharedPreferences: SharedPreferences) {
-        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
-        val savedEmail = sharedPreferences.getString("email", "")
-
-        if (isLoggedIn) {
-            navigateToHome(savedEmail)
+    private fun observeLoginState() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            dataStoreManager.isLoggedIn.collect { isLoggedIn ->
+                if (isLoggedIn) {
+                    dataStoreManager.email.collect { email ->
+                        if (findNavController().currentDestination?.id == R.id.loginFragment) {
+                            navigateToHome(email)
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -57,14 +55,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
             binding.emailInput.setText(email)
             binding.passwordInput.setText(password)
 
-            Toast.makeText(requireContext(), "Email and password pre-filled", Toast.LENGTH_SHORT).show()
         }
     }
 
     /**
      * Set up click listeners for the login and register buttons.
      */
-    private fun setupButtonListeners(sharedPreferences: SharedPreferences) {
+    private fun setupButtonListeners() {
         binding.registerButton.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment2)
         }
@@ -77,22 +74,28 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(requireContext(), "All fields are required", Toast.LENGTH_SHORT).show()
             } else {
-                performLogin(email, password, rememberMeChecked, sharedPreferences)
+                performLogin(email, password, rememberMeChecked)
             }
         }
     }
 
     /**
-     * Perform login and handle navigation or errors.
+     * Perform login and save session if "Remember Me" is checked.
      */
-    private fun performLogin(email: String, password: String, rememberMeChecked: Boolean, sharedPreferences: SharedPreferences) {
+    private fun performLogin(email: String, password: String, rememberMeChecked: Boolean) {
         loginViewModel.login(email, password)
 
         viewLifecycleOwner.lifecycleScope.launch {
             loginViewModel.loginResult.collect { result ->
                 result?.let {
                     if (it.isSuccess) {
-                        handleSuccessfulLogin(email, rememberMeChecked, sharedPreferences)
+                        Toast.makeText(requireContext(), "Login Successful!", Toast.LENGTH_SHORT).show()
+
+                        if (rememberMeChecked) {
+                            saveSession(email)
+                        } else if (findNavController().currentDestination?.id == R.id.loginFragment) {
+                            navigateToHome(email)
+                        }
                     } else {
                         val error = it.exceptionOrNull()?.message
                         Toast.makeText(requireContext(), error ?: "Login failed", Toast.LENGTH_SHORT).show()
@@ -103,27 +106,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     }
 
     /**
-     * Handle successful login, save session if "Remember Me" is checked, and navigate to HomeFragment.
+     * Save login state to DataStore.
      */
-    private fun handleSuccessfulLogin(email: String, rememberMeChecked: Boolean, sharedPreferences: SharedPreferences) {
-        Toast.makeText(requireContext(), "Login Successful!", Toast.LENGTH_SHORT).show()
-
-        if (rememberMeChecked) {
-            saveSession(sharedPreferences, email)
-        }
-
-        navigateToHome(email)
-    }
-
-    /**
-     * Save session data to SharedPreferences for persistent login.
-     */
-    private fun saveSession(sharedPreferences: SharedPreferences, email: String) {
-        sharedPreferences.edit().apply {
-            putBoolean("isLoggedIn", true)
-            putString("email", email)
-            apply()
-        }
+    private suspend fun saveSession(email: String) {
+        dataStoreManager.saveLoginState(isLoggedIn = true, email = email)
     }
 
     /**
