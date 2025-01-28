@@ -2,13 +2,15 @@ package com.example.homeworks.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.homeworks.R
 import com.example.homeworks.api.User
 import com.example.homeworks.databinding.ItemUserBinding
 
-class UserAdapter(private val users: List<User>) :
-    RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+class UserPagingAdapter : PagingDataAdapter<User, UserPagingAdapter.UserViewHolder>(UserDiffCallback) {
 
     inner class UserViewHolder(private val binding: ItemUserBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -16,25 +18,34 @@ class UserAdapter(private val users: List<User>) :
             binding.firstName.text = user.firstName
             binding.lastName.text = user.lastName
             binding.email.text = user.email
-
             Glide.with(binding.avatar.context)
                 .load(user.avatar)
+                .placeholder(R.drawable.ic_launcher_background)
                 .into(binding.avatar)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        val binding = ItemUserBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
-        )
+        val binding = ItemUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return UserViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.bind(users[position])
+        val user = getItem(position)
+        if (user != null) {
+            holder.bind(user)
+        }
     }
 
-    override fun getItemCount(): Int = users.size
+    companion object {
+        val UserDiffCallback = object : DiffUtil.ItemCallback<User>() {
+            override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
+                return oldItem.id == newItem.id
+            }
+
+            override fun areContentsTheSame(oldItem: User, newItem: User): Boolean {
+                return oldItem == newItem
+            }
+        }
+    }
 }
