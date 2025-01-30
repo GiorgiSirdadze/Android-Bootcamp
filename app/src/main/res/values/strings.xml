@@ -43,4 +43,8 @@
     <string name="log_out">Log Out</string>
     <string name="remember_me">Remember Me</string>
     <string name="profiles">Profiles</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="save">Save</string>
+    <string name="read">Read</string>
 </resources>

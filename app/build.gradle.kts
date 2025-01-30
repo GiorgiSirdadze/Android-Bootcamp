@@ -4,6 +4,8 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     kotlin("plugin.serialization") version "2.0.21"
 
+    id("com.google.protobuf") version "0.9.4"
+
 }
 
 android {
@@ -63,5 +65,39 @@ dependencies {
     implementation (libs.glide)
     implementation (libs.androidx.paging.runtime)
     implementation (libs.androidx.paging.common)
+    implementation(libs.androidx.datastore.core)
+    implementation(libs.protobuf.javalite)
+
 
 }
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.24.0"
+    }
+    generateProtoTasks {
+        all().configureEach {
+            builtins {
+                create("java") {
+                    option("lite")
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
