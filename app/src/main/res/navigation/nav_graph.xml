@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/messageFragment">
-
+    app:startDestination="@id/userFragment">
     <fragment
-        android:id="@+id/messageFragment"
-        android:name="com.example.revisions.MessageFragment"
-        android:label="fragment_message"
-        tools:layout="@layout/fragment_message" />
+        android:id="@+id/userFragment"
+        android:name="com.example.revisions.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" />
 </navigation>
