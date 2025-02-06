@@ -2,5 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="green">#1BC322</color>
+    <color name="red">#BF1919</color>
     <color name = "inactive_tab">#4B4949</color>
 </resources>
