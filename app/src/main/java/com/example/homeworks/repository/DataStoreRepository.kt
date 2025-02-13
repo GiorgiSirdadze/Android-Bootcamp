@@ -1,16 +1,15 @@
-package com.example.homeworks.datastore
+package com.example.homeworks.repository
 
-import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-private val Context.dataStore by preferencesDataStore(name = "user_prefs")
-
-class DataStoreManager(private val context: Context) {
+class DataStoreRepository @Inject constructor(private val dataStore: DataStore<Preferences>) {
 
     companion object {
         private val IS_LOGGED_IN = booleanPreferencesKey("is_logged_in")
@@ -18,23 +17,23 @@ class DataStoreManager(private val context: Context) {
     }
 
     suspend fun saveLoginState(isLoggedIn: Boolean, email: String) {
-        context.dataStore.edit { preferences ->
+        dataStore.edit { preferences ->
             preferences[IS_LOGGED_IN] = isLoggedIn
             preferences[EMAIL] = email
         }
     }
 
     suspend fun clearLoginState() {
-        context.dataStore.edit { preferences ->
+        dataStore.edit { preferences ->
             preferences.clear()
         }
     }
 
-    val isLoggedIn: Flow<Boolean> = context.dataStore.data.map { preferences ->
+    val isLoggedIn: Flow<Boolean> = dataStore.data.map { preferences ->
         preferences[IS_LOGGED_IN] ?: false
     }
 
-    val email: Flow<String> = context.dataStore.data.map { preferences ->
+    val email: Flow<String> = dataStore.data.map { preferences ->
         preferences[EMAIL] ?: ""
     }
 }

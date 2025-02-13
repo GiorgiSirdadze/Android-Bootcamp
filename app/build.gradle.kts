@@ -3,6 +3,9 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("androidx.navigation.safeargs.kotlin")
     kotlin("plugin.serialization") version "2.0.21"
+    id("com.google.devtools.ksp") version "2.0.0-1.0.22"
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android") version "2.51.1"
 
 }
 
@@ -62,5 +65,14 @@ dependencies {
     implementation (libs.retrofit2.kotlinx.serialization.converter)
     implementation (libs.androidx.datastore.preferences)
     implementation (libs.glide)
-
+    implementation (libs.androidx.paging.runtime)
+    implementation (libs.androidx.room.runtime)
+    ksp (libs.androidx.room.compiler)
+    implementation (libs.androidx.room.paging)
+    implementation (libs.androidx.room.ktx)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+}
+kapt {
+    correctErrorTypes = true
 }

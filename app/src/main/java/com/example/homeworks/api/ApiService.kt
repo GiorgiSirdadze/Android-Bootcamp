@@ -14,6 +14,6 @@ interface ApiService {
     suspend fun register(@Body registerRequest: RegisterRequestDto): Response<RegisterResponseDto>
 
     @GET("users")
-    suspend fun getUsers(@Query("page") page: Int): UserResponse
+    suspend fun getUsers(): Response<UserDto>
 }
 

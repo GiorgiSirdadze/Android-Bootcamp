@@ -10,8 +10,12 @@ import com.example.homeworks.R
 import com.example.homeworks.databinding.FragmentRegisterBinding
 import com.example.homeworks.resource.Resource
 import com.example.homeworks.viewmodel.RegisterViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+
+@AndroidEntryPoint
 class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterBinding::inflate) {
 
     private val registerViewModel: RegisterViewModel by viewModels()

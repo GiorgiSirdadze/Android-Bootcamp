@@ -2,17 +2,20 @@ package com.example.homeworks.fragments
 
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.homeworks.datastore.DataStoreManager
+import com.example.homeworks.repository.DataStoreRepository
 import com.example.homeworks.R
 import com.example.homeworks.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
-
-    private lateinit var dataStoreManager: DataStoreManager
+    @Inject
+    lateinit var dataStoreRepository: DataStoreRepository
 
     override fun start() {
-        dataStoreManager = DataStoreManager(requireContext())
+
 
         displayEmail()
 
@@ -35,7 +38,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     private fun setupLogoutButton() {
         binding.logoutButton.setOnClickListener {
             lifecycleScope.launch {
-                dataStoreManager.clearLoginState() // Clear session data
+                dataStoreRepository.clearLoginState() // Clear session data
                 navigateToLogin()
             }
         }

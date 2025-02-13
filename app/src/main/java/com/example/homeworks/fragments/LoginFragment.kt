@@ -9,18 +9,23 @@ import androidx.navigation.fragment.findNavController
 import com.example.homeworks.viewmodel.LoginViewModel
 import com.example.homeworks.R
 import com.example.homeworks.databinding.FragmentLoginBinding
-import com.example.homeworks.datastore.DataStoreManager
+import com.example.homeworks.repository.DataStoreRepository
 import com.example.homeworks.resource.Resource
+import dagger.hilt.android.AndroidEntryPoint
 
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
     private val loginViewModel: LoginViewModel by viewModels()
-    private lateinit var dataStoreManager: DataStoreManager
+
+    @Inject
+    lateinit var dataStoreRepository: DataStoreRepository
 
     override fun start() {
-        dataStoreManager = DataStoreManager(requireContext())
+
 
         observeLoginState()
 
@@ -34,9 +39,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
      */
     private fun observeLoginState() {
         viewLifecycleOwner.lifecycleScope.launch {
-            dataStoreManager.isLoggedIn.collect { isLoggedIn ->
+            dataStoreRepository.isLoggedIn.collect { isLoggedIn ->
                 if (isLoggedIn) {
-                    dataStoreManager.email.collect { email ->
+                    dataStoreRepository.email.collect { email ->
                         if (findNavController().currentDestination?.id == R.id.loginFragment) {
                             navigateToHome(email)
                         }
@@ -112,7 +117,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
      * Save login state to DataStore.
      */
     private suspend fun saveSession(email: String) {
-        dataStoreManager.saveLoginState(isLoggedIn = true, email = email)
+        dataStoreRepository.saveLoginState(isLoggedIn = true, email = email)
     }
 
     /**
