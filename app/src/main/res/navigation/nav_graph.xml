@@ -3,10 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/userFragment">
+    app:startDestination="@id/itemFragment">
     <fragment
-        android:id="@+id/userFragment"
-        android:name="com.example.revisions.UserFragment"
-        android:label="fragment_user"
-        tools:layout="@layout/fragment_user" />
+        android:id="@+id/itemFragment"
+        android:name="com.example.revisions.presentation.ItemFragment"
+        android:label="ItemFragment" />
 </navigation>

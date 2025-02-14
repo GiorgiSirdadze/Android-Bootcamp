@@ -1,4 +1,3 @@
-import com.android.build.api.dsl.Packaging
 
 plugins {
     alias(libs.plugins.android.application)
@@ -6,6 +5,8 @@ plugins {
     kotlin("plugin.serialization") version "2.0.21"
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.devtools.ksp") version "2.0.0-1.0.22"
+    id("com.google.dagger.hilt.android") version "2.51.1"
+    id("kotlin-kapt")
 }
 
 android {
@@ -66,13 +67,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
     implementation(libs.kotlinx.serialization.json)
-    implementation(libs.squareup.moshi.kotlin.codegen)
-    implementation(libs.moshi)
-    implementation(libs.moshi.kotlin)
     implementation(libs.glide)
-    implementation(libs.moshi.v1150)
-    implementation(libs.squareup.moshi.kotlin.codegen)
-    ksp(libs.squareup.moshi.kotlin.codegen)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
@@ -83,11 +78,14 @@ dependencies {
     implementation(libs.androidx.paging.common)
     implementation(libs.androidx.datastore.core)
     implementation(libs.protobuf.javalite)
-
-
     implementation (libs.androidx.room.runtime)
     ksp (libs.androidx.room.compiler)
     implementation (libs.androidx.room.ktx)
     androidTestImplementation (libs.androidx.room.testing)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+}
 
+kapt {
+    correctErrorTypes = true
 }

@@ -1,4 +1,4 @@
-package com.example.revisions
+package com.example.revisions.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
