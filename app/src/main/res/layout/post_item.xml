@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:backgroundTint="#30444E"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_background"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Alice Smith"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/profile_image"
+            app:layout_constraintTop_toTopOf="@id/profile_image" />
+
+        <TextView
+            android:id="@+id/timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20 April at 4:20 PM"
+            android:textColor="#96A7AF"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/user_name"
+            app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+
+        <TextView
+            android:id="@+id/post_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="We’re interested in your ideas "
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_image" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/image_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_text">
+
+            <ImageView
+                android:id="@+id/large_image"
+                android:layout_width="133dp"
+                android:layout_height="148dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_corners"
+                android:clipToOutline="true"
+                android:scaleType="fitXY"
+                app:layout_constraintDimensionRatio="4:3"
+                app:layout_constraintEnd_toStartOf="@id/small_image1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/small_image1"
+                android:layout_width="133dp"
+                android:layout_height="70dp"
+                android:background="@drawable/rounded_corners"
+                android:clipToOutline="true"
+                android:scaleType="fitXY"
+                app:layout_constraintDimensionRatio="2:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/large_image"
+                app:layout_constraintTop_toTopOf="@id/large_image" />
+
+            <ImageView
+                android:id="@+id/small_image2"
+                android:layout_width="133dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corners"
+                android:clipToOutline="true"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/small_image1"
+                app:layout_constraintTop_toBottomOf="@+id/small_image1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="#B8C2C0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_grid" />
+
+        <LinearLayout
+            android:id="@+id/action_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/viewLine2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewLine"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="13dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/message" />
+
+            <TextView
+                android:id="@+id/comments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+
+                android:textColor="#96A7AF"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="13dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/heart" />
+
+            <TextView
+                android:id="@+id/likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="#96A7AF" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="13dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/share" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Share"
+                android:textColor="#96A7AF" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewLine2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="#B8C2C0"
+            app:layout_constraintBottom_toTopOf="@id/commentSection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/action_buttons" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/commentSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/action_buttons"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="16dp">
+
+            <ImageView
+                android:id="@+id/user_comment_image"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/circle_background"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/comment_input"
+                android:layout_width="250dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/solid_background"
+                android:drawableEnd="@drawable/attach"
+                android:hint="Write comment..."
+                android:padding="8dp"
+                android:textColorHint="#96A7AF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/user_comment_image"
+                app:layout_constraintTop_toTopOf="@id/user_comment_image" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

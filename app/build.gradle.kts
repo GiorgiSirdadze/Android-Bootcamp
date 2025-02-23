@@ -34,10 +34,15 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://run.mocky.io/v3/\"")
+        }
         release {
+            buildConfigField("String", "BASE_URL", "\"https://run.mocky.io/v3/\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
