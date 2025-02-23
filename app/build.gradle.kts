@@ -7,6 +7,8 @@ plugins {
     id("com.google.devtools.ksp") version "2.0.0-1.0.22"
     id("com.google.dagger.hilt.android") version "2.51.1"
     id("kotlin-kapt")
+
+    alias(libs.plugins.map.secret)
 }
 
 android {
@@ -34,10 +36,15 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://run.mocky.io/v3/\"")
+        }
         release {
+            buildConfigField("String", "BASE_URL", "\"https://run.mocky.io/v3/\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -84,8 +91,11 @@ dependencies {
     androidTestImplementation (libs.androidx.room.testing)
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    implementation (libs.play.services.maps)
+    implementation(libs.play.services.location)
+    implementation(libs.play.services.base)
+    implementation (libs.material.v190)
 }
-
 kapt {
     correctErrorTypes = true
 }

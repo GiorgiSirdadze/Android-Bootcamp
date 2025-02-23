@@ -5,6 +5,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface ApiService {
-    @GET("6dffd14a-836f-4566-b024-bd41ace3a874")
-    suspend fun getItems(): Response<List<ItemDto>>
+    @GET("c4c64996-4ed9-4cbc-8986-43c4990d495a")
+    suspend fun getLocations(): Response<List<LocationDto>>
 }

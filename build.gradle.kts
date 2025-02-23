@@ -4,6 +4,8 @@ buildscript {
     }
     dependencies {
         classpath(libs.androidx.navigation.safe.args.gradle.plugin)
+        classpath (libs.secrets.gradle.plugin)
+        classpath (libs.google.services)
     }
 }
 
@@ -11,4 +13,5 @@ buildscript {
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.map.secret) apply false
 }
