@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "998043865213",
+    "project_id": "exploreit-52aff",
+    "storage_bucket": "exploreit-52aff.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998043865213:android:c540fce552a131c9eae114",
+        "android_client_info": {
+          "package_name": "com.example.exploreit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHWI_vC87ZRTQvmA_3TzEayMBiJ8T5GrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

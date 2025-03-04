@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name" translatable="false">ExploreIt</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="exploreit">ExploreIt</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="username">Username</string>
+    <string name="fill_all_fields">Fill all fields!</string>
+    <string name="passwords_do_not_match">Passwords do not match!</string>
+    <string name="registered_successfully">Registered Successfully!</string>
+    <string name="registration_failed">Registration Failed! %1$s</string>
+    <string name="failed_to_save_user">Failed to save user: %s</string>
+    <string name="book_now">Book Now</string>
+    <string name="login_successful">Login Successful!</string>
+    <string name="login_failed">Login Failed! %1$s</string>
+    <string name="welcome">Welcome, %1$s</string>
+    <string name="search_by_title_or_location">Search by title or location</string>
+    <string name="where_are_you_going">Where are you going?</string>
+    <string name="popular">Popular</string>
+    <string name="all">All</string>
+    <string name="low_price">Low Price</string>
+    <string name="duration">Duration</string>
+    <string name="favorite_tours">Favorite Tours</string>
+    <string name="payment">Payment</string>
+    <string name="mastercard">MasterCard</string>
+    <string name="visacard">VisaCard</string>
+    <string name="card_owner_name">Card Owner Name</string>
+    <string name="card_number">Card Number</string>
+    <string name="expires">Expires</string>
+    <string name="ccv">CCV</string>
+    <string name="pay">Pay</string>
+    <string name="profile">Profile</string>
+    <string name="fullname">FullName: %1$s</string>
+    <string name="username_profile">UserName: %1$s</string>
+    <string name="change_language">Change Language</string>
+    <string name="logout">Logout</string>
+    <string name="favorite">Favorite</string>
+    <string name="home">Home</string>
+    <string name="payment_successful">Payment Successful</string>
+
+</resources>

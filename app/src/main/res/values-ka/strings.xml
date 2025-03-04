@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="register">რეგისტრაცია</string>
+    <string name="login">ავტორიზაცია</string>
+    <string name="exploreit">ExploreIt</string>
+    <string name="email">ემაილი</string>
+    <string name="password">პაროლი</string>
+    <string name="remember_me">დამახსოვრება</string>
+    <string name="repeat_password">გაიმეორე პაროლი</string>
+    <string name="full_name">სრული სახელი</string>
+    <string name="username">მომხმარებლის სახელი</string>
+    <string name="fill_all_fields">შეავსეთ ყველა ველი!</string>
+    <string name="passwords_do_not_match">პაროლები არ ემთხვევა!</string>
+    <string name="registered_successfully">რეგისტრაცია წარმატებით გაიარეთ!</string>
+    <string name="registration_failed">რეგისტრაცია ვერ გაიარეთ! %1$s</string>
+    <string name="failed_to_save_user">ვერ მოხერხდა მომხმარებლის შენახვა: %s</string>
+    <string name="book_now">დაჯავშნა</string>
+    <string name="login_successful">ავტორიზაცია წარმატებით გაიარეთ!</string>
+    <string name="login_failed">ავტორიზაცია ვერ მოხერხდა! %1$s</string>
+    <string name="welcome">მოგესალმებით, %1$s</string>
+    <string name="search_by_title_or_location">მოძებნე სახელით ან ადგილმდებარეობით</string>
+    <string name="where_are_you_going">სად მიემგზავრებით?</string>
+    <string name="popular">პოპულალური</string>
+    <string name="all">ყველა</string>
+    <string name="low_price">დაბალი ფასი</string>
+    <string name="duration">დრო</string>
+    <string name="favorite_tours">ფავორიტი ტურები</string>
+    <string name="payment">გადახდა</string>
+    <string name="mastercard">მასტერქარდი</string>
+    <string name="visacard">ვიზაქარდი</string>
+    <string name="card_owner_name">ბარათის მფლობელის სახელი</string>
+    <string name="card_number">ბარათის ნომერი</string>
+    <string name="expires">ვადა</string>
+    <string name="ccv">სამნიშნა კოდი</string>
+    <string name="pay">გადახდა</string>
+    <string name="profile">პროფაილი</string>
+    <string name="fullname">სრული სახელი: %1$s</string>
+    <string name="username_profile">მომხმარებლის სახელი: %1$s</string>
+    <string name="change_language">ენის შეცვლა</string>
+    <string name="logout">გამოსვლა</string>
+    <string name="favorite">ფავორიტები</string>
+    <string name="home">მთავარი</string>
+</resources>

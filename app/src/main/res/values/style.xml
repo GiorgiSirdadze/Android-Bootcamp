@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.App" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#7CC1E2</item>
+    </style>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#7CC1E2</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_image</item>
+        <item name="windowSplashScreenAnimationDuration">50000</item>
+        <item name="postSplashScreenTheme">@style/Theme.App</item>
+    </style>
+</resources>
