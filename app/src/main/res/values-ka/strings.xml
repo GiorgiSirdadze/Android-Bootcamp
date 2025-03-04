@@ -40,4 +40,5 @@
     <string name="logout">გამოსვლა</string>
     <string name="favorite">ფავორიტები</string>
     <string name="home">მთავარი</string>
+    <string name="payment_successful">გადახდა წარმატებულია</string>
 </resources>
