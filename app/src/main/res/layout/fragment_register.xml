@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".fragments.RegisterFragment">
+    tools:context=".presentation.fragment.RegisterFragment">
 
     <ImageButton
         android:id="@+id/backButton"
@@ -74,6 +74,7 @@
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textColorHint="#B39DDB"
+            android:textColor="#B39DDB"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/email_icon"
@@ -112,6 +113,7 @@
             android:hint="@string/password"
             android:inputType="textPassword"
             android:textColorHint="#B39DDB"
+            android:textColor="#B39DDB"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/username_icon"
@@ -150,6 +152,7 @@
             android:hint="@string/repeat_password"
             android:inputType="textPassword"
             android:textColorHint="#B39DDB"
+            android:textColor="#B39DDB"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/password_icon"

@@ -8,7 +8,6 @@ plugins {
     id("com.google.dagger.hilt.android") version "2.51.1"
 
 }
-
 android {
     namespace = "com.example.homeworks"
     compileSdk = 35
@@ -25,10 +24,16 @@ android {
 
     buildFeatures{
         viewBinding = true
+        buildConfig = true
+
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://reqres.in/api/\"")
+        }
         release {
+            buildConfigField("String", "BASE_URL", "\"https://reqres.in/api/\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -36,6 +41,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8

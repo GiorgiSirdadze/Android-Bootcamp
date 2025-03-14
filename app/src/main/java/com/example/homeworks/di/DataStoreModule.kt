@@ -1,10 +1,10 @@
 package com.example.homeworks.di
 
-import com.example.homeworks.repository.DataStoreRepository
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import com.example.homeworks.data.repository.DataStoreRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,7 +26,7 @@ object DataStoreModule {
 
     @Provides
     @Singleton
-    fun provideDataStoreRepository(dataStore: DataStore<Preferences>): DataStoreRepository {
-        return DataStoreRepository(dataStore)
+    fun provideDataStoreRepository(dataStore: DataStore<Preferences>): DataStoreRepositoryImpl {
+        return DataStoreRepositoryImpl(dataStore)
     }
 }

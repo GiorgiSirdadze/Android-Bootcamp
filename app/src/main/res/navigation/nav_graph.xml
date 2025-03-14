@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.homeworks.fragments.LoginFragment"
+        android:name="com.example.homeworks.presentation.fragment.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -18,12 +18,12 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment2"
-        android:name="com.example.homeworks.fragments.RegisterFragment"
+        android:name="com.example.homeworks.presentation.fragment.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.homeworks.fragments.HomeFragment"
+        android:name="com.example.homeworks.presentation.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.homeworks.fragments.ProfileFragment"
+        android:name="com.example.homeworks.presentation.fragment.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
