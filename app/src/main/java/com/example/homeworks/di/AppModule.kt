@@ -1,23 +1,12 @@
 package com.example.homeworks.di
 
-import android.content.Context
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.room.Room
 import com.example.homeworks.BuildConfig
 import com.example.homeworks.data.remote.ApiService
-import com.example.homeworks.data.local.UserDao
-import com.example.homeworks.data.local.UserDatabase
-import com.example.homeworks.data.repository.DataStoreRepositoryImpl
-import com.example.homeworks.data.repository.LoginRepositoryImpl
-import com.example.homeworks.data.repository.RegisterRepositoryImpl
-import com.example.homeworks.data.repository.UserRepositoryImpl
-import com.example.homeworks.data.resource.ApiHelper
+import com.example.homeworks.domain.resource.ApiHelper
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
@@ -25,6 +14,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
@@ -63,12 +53,5 @@ object AppModule {
     fun provideApiService(retrofit : Retrofit) : ApiService {
         return retrofit.create(ApiService::class.java)
     }
-    @Provides
-    fun provideRoomDatabase(@ApplicationContext context: Context): UserDatabase {
-        return Room.databaseBuilder(
-            context.applicationContext,
-            UserDatabase::class.java,
-            "user_database"
-        ).build()
-    }
+
 }

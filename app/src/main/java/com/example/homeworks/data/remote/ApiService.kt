@@ -1,20 +1,13 @@
 package com.example.homeworks.data.remote
 
-import retrofit2.http.Body
-import retrofit2.http.POST
+
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Query
+
 
 interface ApiService {
-    @POST("login")
-    suspend fun login(@Body loginRequest: LoginRequestDto): Response<LoginResponseDto>
-
-    @POST("register")
-    suspend fun register(@Body registerRequest: RegisterRequestDto): Response<RegisterResponseDto>
-
-    @GET("users")
-    suspend fun getUsers(@Query("page") page: Int): Response<UserDto>
+    @GET("499e0ffd-db69-4955-8d86-86ee60755b9c")
+    suspend fun getCategories(): Response<List<CategoryDto>>
 
 }
 
