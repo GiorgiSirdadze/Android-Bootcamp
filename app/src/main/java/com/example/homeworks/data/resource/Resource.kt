@@ -1,4 +1,4 @@
-package com.example.homeworks.resource
+package com.example.homeworks.data.resource
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

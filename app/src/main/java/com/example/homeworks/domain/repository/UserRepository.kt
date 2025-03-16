@@ -1,7 +1,7 @@
 package com.example.homeworks.domain.repository
 
 import com.example.homeworks.domain.model.User
-import com.example.homeworks.resource.Resource
+import com.example.homeworks.data.resource.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface UserRepository {

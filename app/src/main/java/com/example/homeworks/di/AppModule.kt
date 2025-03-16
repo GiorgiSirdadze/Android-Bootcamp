@@ -12,7 +12,7 @@ import com.example.homeworks.data.repository.DataStoreRepositoryImpl
 import com.example.homeworks.data.repository.LoginRepositoryImpl
 import com.example.homeworks.data.repository.RegisterRepositoryImpl
 import com.example.homeworks.data.repository.UserRepositoryImpl
-import com.example.homeworks.resource.ApiHelper
+import com.example.homeworks.data.resource.ApiHelper
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -55,7 +55,7 @@ object AppModule {
             .build()
     }
     @Provides
-    fun provideApiHelper(): ApiHelper{
+    fun provideApiHelper(): ApiHelper {
         return ApiHelper
     }
 
@@ -70,39 +70,5 @@ object AppModule {
             UserDatabase::class.java,
             "user_database"
         ).build()
-    }
-    @Provides
-    fun provideUserDao(userDatabase: UserDatabase): UserDao {
-        return userDatabase.userDao()
-    }
-
-    @Provides
-    fun provideUserRepository(
-        apiHelper: ApiHelper,
-        apiService: ApiService,
-    ): UserRepositoryImpl {
-        return UserRepositoryImpl(apiHelper, apiService)
-    }
-
-    @Provides
-    fun provideDataStoreRepository(
-        dataStore: DataStore<Preferences>
-    ):DataStoreRepositoryImpl{
-        return DataStoreRepositoryImpl(dataStore)
-    }
-    @Provides
-    fun provideLoginRepository(
-        apiHelper: ApiHelper,
-        apiService: ApiService,
-    ):LoginRepositoryImpl{
-        return LoginRepositoryImpl(apiHelper,apiService)
-    }
-
-    @Provides
-    fun provideRegisterRepository(
-        apiHelper: ApiHelper,
-        apiService: ApiService,
-    ): RegisterRepositoryImpl {
-        return RegisterRepositoryImpl(apiHelper,apiService)
     }
 }

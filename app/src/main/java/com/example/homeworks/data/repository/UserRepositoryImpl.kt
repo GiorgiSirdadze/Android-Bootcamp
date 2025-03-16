@@ -4,9 +4,9 @@ import com.example.homeworks.data.remote.ApiService
 import com.example.homeworks.data.mapper.toDomain
 import com.example.homeworks.domain.model.User
 import com.example.homeworks.domain.repository.UserRepository
-import com.example.homeworks.resource.ApiHelper
-import com.example.homeworks.resource.Resource
-import com.example.homeworks.resource.mapResource
+import com.example.homeworks.data.resource.ApiHelper
+import com.example.homeworks.data.resource.Resource
+import com.example.homeworks.data.resource.mapResource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

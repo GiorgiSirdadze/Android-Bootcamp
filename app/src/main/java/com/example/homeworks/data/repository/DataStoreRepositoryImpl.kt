@@ -17,13 +17,11 @@ class DataStoreRepositoryImpl @Inject constructor(
             preferences[key] = value
         }
     }
-
     override suspend fun clearData() {
         dataStore.edit { preferences ->
             preferences.clear()
         }
     }
-
     override fun <T> getData(key: Preferences.Key<T>, defaultValue: T): Flow<T> {
         return dataStore.data.map { preferences ->
             preferences[key] ?: defaultValue

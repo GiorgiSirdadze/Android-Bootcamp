@@ -2,7 +2,7 @@ package com.example.homeworks.domain.usecase
 
 import com.example.homeworks.domain.model.RegisterResponse
 import com.example.homeworks.domain.repository.RegisterRepository
-import com.example.homeworks.resource.Resource
+import com.example.homeworks.data.resource.Resource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
