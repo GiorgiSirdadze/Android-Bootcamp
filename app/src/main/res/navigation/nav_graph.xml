@@ -6,7 +6,7 @@
     app:startDestination="@id/imageFragment">
     <fragment
         android:id="@+id/imageFragment"
-        android:name="com.example.homeworks.presentation.ImageFragment"
+        android:name="com.example.homeworks.presentation.screen.imagescreen.ImageFragment"
         android:label="fragment_image"
         tools:layout="@layout/fragment_image" />
 </navigation>

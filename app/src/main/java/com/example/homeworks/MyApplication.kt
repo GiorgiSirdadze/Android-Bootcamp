@@ -3,30 +3,42 @@ package com.example.homeworks
 import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.util.Log
+import androidx.hilt.work.HiltWorkerFactory
+import androidx.work.Configuration
+import androidx.work.WorkManager
 import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 
 @HiltAndroidApp
-class MyApplication : Application() {
+class MyApplication : Application(), Configuration.Provider {
+
+    @Inject
+    lateinit var workerFactory: HiltWorkerFactory
 
     override fun onCreate() {
         super.onCreate()
         createNotificationChannel()
     }
 
-    private fun createNotificationChannel() {
-        val channelId = "default_channel"
-        val channelName = "Default Channel"
-        val channelDescription = "Channel for image notifications"
 
+    private fun createNotificationChannel() {
         val channel = NotificationChannel(
-            channelId,
-            channelName,
+            "default_channel",
+            "Default Channel",
             NotificationManager.IMPORTANCE_DEFAULT
         ).apply {
-            description = channelDescription
+            description = "Channel for image notifications"
         }
 
-        val notificationManager = getSystemService(NotificationManager::class.java)
-        notificationManager.createNotificationChannel(channel)
+        getSystemService(NotificationManager::class.java).apply {
+            createNotificationChannel(channel)
+        }
     }
+
+    override val workManagerConfiguration: Configuration
+        get() = Configuration.Builder()
+            .setWorkerFactory(workerFactory)
+            .setMinimumLoggingLevel(Log.INFO)
+            .build()
 }

@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
     android:padding="16dp"
-    tools:context=".presentation.ImageFragment">
+    tools:context=".presentation.screen.imagescreen.ImageFragment">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView"
@@ -24,6 +24,16 @@
         android:layout_height="wrap_content"
         android:text="@string/add_image"
         app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnUploadImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/upload_image"
+        app:layout_constraintTop_toBottomOf="@id/btnAddImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>

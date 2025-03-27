@@ -59,6 +59,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.paging.runtime.ktx)
     implementation(libs.firebase.messaging.ktx)
+    implementation(libs.androidx.hilt.common)
+    implementation(libs.androidx.hilt.work)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -81,6 +83,9 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
+    implementation (libs.firebase.storage.ktx)
+    implementation (libs.androidx.work.runtime.ktx)
+
 }
 kapt {
     correctErrorTypes = true
