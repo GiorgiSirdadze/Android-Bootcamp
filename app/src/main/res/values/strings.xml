@@ -49,4 +49,7 @@
     <string name="default_notification_channel_id">532</string>
     <string name="msg_token_fmt">1231</string>
     <string name="upload_image">Upload Image</string>
+    <string name="description">Description</string>
+    <string name="transfer_between_your_accounts">Transfer between your accounts</string>
+    <string name="transfer_internally">Transfer internally</string>
 </resources>

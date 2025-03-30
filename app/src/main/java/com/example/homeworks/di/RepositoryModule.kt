@@ -1,37 +1,31 @@
 package com.example.homeworks.di
 
-import android.content.Context
-import com.example.homeworks.data.repository.ImageRepositoryImpl
-import com.example.homeworks.data.repository.StorageRepositoryImpl
-import com.example.homeworks.domain.repository.ImageRepository
-import com.example.homeworks.domain.repository.StorageRepository
-import com.google.firebase.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.storage
+import com.example.homeworks.data.repository.FromAccountRepositoryImpl
+import com.example.homeworks.data.repository.ToAccountRepositoryImpl
+import com.example.homeworks.domain.repository.FromAccountRepository
+import com.example.homeworks.domain.repository.ToAccountRepository
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
+import javax.inject.Singleton
+
+
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RepositoryModule {
-    @Provides
-    fun provideImageRepository(
-        @ApplicationContext context: Context,
-        ioDispatcher: CoroutineDispatcher = Dispatchers.IO
-    ): ImageRepository = ImageRepositoryImpl(context, ioDispatcher)
+abstract class RepositoryModule {
+    @Binds
+    @Singleton
+    abstract fun bindFromAccountRepository(
+        fromAccountRepositoryImpl: FromAccountRepositoryImpl
+    ): FromAccountRepository
 
-    @Provides
-    fun provideFirebaseStorage(): FirebaseStorage {
-        return Firebase.storage
-    }
+    @Binds
+    @Singleton
+    abstract fun bindToAccountRepository(
+        toAccountRepositoryImpl: ToAccountRepositoryImpl
+    ): ToAccountRepository
 
-    @Provides
-    fun provideStorageRepository(storage: FirebaseStorage): StorageRepository {
-        return StorageRepositoryImpl(storage)
-    }
+
 }
